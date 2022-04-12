@@ -1003,7 +1003,7 @@
                     </h5>
                   </div>
                   <div>
-                    <form action="" method="post" role="form" class="contactForm">
+                    <!-- <form action="" method="post" role="form" class="contactForm">
                       <div id="sendmessage">Your message has been sent. Thank you!</div>
                       <div id="errormessage"></div>
                       <div class="row">
@@ -1039,78 +1039,34 @@
                           <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
                         </div>
                       </div>
-                    </form>
+                    </form> -->
 
-                    <script src="https://www.google.com/recaptcha/api.js"></script>
-                    <form action="/form.php" method="post" id="contact-form">
-                      <h2>Contact us</h2>
+                    <div class="form">
+                      <form action="#" id="form" class="form__body">
+                        <!-- <h3 class="form__title">Отправка данных на почту</h3> -->
+                        <div class="form__item">
+                          <label for="formName" class="form__label">Name*:</label>
+                          <input id="formName" type="text" name="name" class="form__input _req">
+                        </div>
+                        <div class="form__item">
+                          <label for="formEmail" class="form__label">Email*:</label>
+                          <input id="formEmail" type="text" name="email" class="form__input _req _email">
+                        </div>
+                        <div class="form__item">
+                          <label for="formSubject" class="form__label">Subject*:</label>
+                          <input id="formSubject" type="text" name="subject" class="form__input _req">
+                        </div>
+                        <div class="form__item">
+                          <label for="formMessage" class="form__label">Message*:</label>
+                          <textarea id="formMessage" name="message" class="form__input _req">
 
-                      <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
-                      <p>
-                        <label>First Name:</label>
-                        <input name="name" type="text" />
-                      </p>
-                      <p>
-                        <label>Email Address:</label>
-                        <input style="cursor: pointer;" name="email" type="text" />
-                      </p>
-                      <p>
-                        <label>Message:</label>
-                        <textarea name="message"></textarea>
-                      </p>
-
-                      <p>
-                        <button class="g-recaptcha" type="submit" data-sitekey="your site key"
-                          data-callback='onRecaptchaSuccess'>
-                          Submit
+                          </textarea>
+                        </div>
+                        <button type="submit" class="form__button button button-a button-big button-rouded">
+                          SEND
                         </button>
-                      </p>
-                    </form>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-                    <script>
-                      const constraints = {
-                        name: {
-                          presence: { allowEmpty: false }
-                        },
-                        email: {
-                          presence: { allowEmpty: false },
-                          email: true
-                        },
-                        message: {
-                          presence: { allowEmpty: false }
-                        }
-                      };
-
-                      const form = document.getElementById('contact-form');
-
-                      form.addEventListener('submit', function (event) {
-                        const formValues = {
-                          name: form.elements.name.value,
-                          email: form.elements.email.value,
-                          message: form.elements.message.value
-                        };
-
-                        const errors = validate(formValues, constraints);
-
-                        if (errors) {
-                          event.preventDefault();
-                          const errorMessage = Object
-                            .values(errors)
-                            .map(function (fieldValues) {
-                              return fieldValues.join(', ')
-                            })
-                            .join("\n");
-
-                          alert(errorMessage);
-                        }
-                      }, false);
-
-                      function onRecaptchaSuccess() {
-                        document.getElementById('contact-form').submit()
-                      }
-                    </script>
-
-
+                      </form>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -1125,19 +1081,18 @@
                     </p>
                     <ul class="list-ico">
                       <li><span class="ion-ios-location"></span> 49000, UKRAINE, DNIPRO</li>
-                      <li><span class="ion-ios-telephone"></span><a href="tel:380676300000">+38 (067) 630-00-00</a></li>
+                      <!-- <li><span class="ion-ios-telephone"></span><a href="tel:380676300000">+38 (067) 630-00-00</a></li> -->
                       <li><span class="ion-email"></span><a
                           href="mailto:admin@freeproagent.site">admin@freeproagent.site</a></li>
                     </ul>
                   </div>
-                  <div class="socials">
+                  <!-- <div class="socials">
                     <ul>
                       <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
                       <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
                       <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
                       <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
-                    </ul>
-                  </div>
+                    </ul> -->
                 </div>
               </div>
             </div>
@@ -1145,12 +1100,13 @@
         </div>
       </div>
     </div>
+    </div>
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>AlexWebEngineer</strong>. All Rights Reserved</p>
+              <p class="copyright">&copy; Copyright FreeProAgent. All Rights Reserved</p>
               <div class="credits">
                 <!--
                   All the links in the footer should remain intact.
@@ -1187,6 +1143,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
 
 
 </body>
