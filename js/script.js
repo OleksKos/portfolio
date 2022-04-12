@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let formData = new FormData(form);
     if (error === 0) {
-      formRemoveError.classList.add('_sending');
+      form.classList.add('_sending');
       let response = await fetch('sendmail.php', {
         method: 'POST',
         body: formData
